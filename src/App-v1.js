@@ -48,35 +48,23 @@ function Steps() {
             <div className={step >= 3 ? "active" : ""}>3</div>
           </div>
 
-          <StepMessage step={step}>{messages[step - 1]}</StepMessage>
+          {/* messages */}
+          <p className="message">
+            Steps {step} : {messages[step - 1]}
+            {/* {test.name} */}
+          </p>
 
           {/* buttons */}
           <div className="buttons">
-            <Button bgColor='#7950f2' textColor='#fff' onClick={previousAlert}>
-              <span>👆</span>Previous
-            </Button>
-            <Button bgColor='#7950f2' textColor='#fff' onClick={nextAlert}>
-            Next<span>🎬📽</span> 
-            </Button>
+            <button className="coloring" onClick={previousAlert}>
+              Previous
+            </button>
+            <button className="coloring" onClick={nextAlert}>
+              Next
+            </button>
           </div>
         </div>
       )}
     </div>
   );
-}
-
-function StepMessage({step , children}) {
-  return(
-    <p className="message">
-      Steps {step} : {children}
-    </p>
-  )
-}
-
-function Button({bgColor , textColor , onClick , children}) {
-  return (
-    <button style={{backgroundColor: bgColor , color: textColor}} onClick={onClick}>
-      {children}
-    </button>
-  )
 }
