@@ -17,7 +17,6 @@ export default function App() {
 function Steps() {
   const [step, setSteps] = useState(1);
   const [isOpen, setIsOpen] = useState(true);
-  // const [test, setTest] = useState({ name: "Moeez" });
 
   // buttons working
   function previousAlert() {
@@ -26,9 +25,7 @@ function Steps() {
   function nextAlert() {
     if (step < 3) {
       setSteps((s) => s + 1);
-      // setSteps((s) => s + 1);
     }
-    // setTest({ name: "Nadeem" });
   }
   function checkOpen() {
     setIsOpen((is) => !is);
@@ -52,11 +49,11 @@ function Steps() {
 
           {/* buttons */}
           <div className="buttons">
-            <Button bgColor='#7950f2' textColor='#fff' onClick={previousAlert}>
+            <Button bgColor="#7950f2" textColor="#fff" onClick={previousAlert}>
               <span>👆</span>Previous
             </Button>
-            <Button bgColor='#7950f2' textColor='#fff' onClick={nextAlert}>
-            Next<span>🎬📽</span> 
+            <Button bgColor="#7950f2" textColor="#fff" onClick={nextAlert}>
+              Next<span>🎬📽</span>
             </Button>
           </div>
         </div>
@@ -65,18 +62,21 @@ function Steps() {
   );
 }
 
-function StepMessage({step , children}) {
-  return(
+function StepMessage({ step, children }) {
+  return (
     <p className="message">
       Steps {step} : {children}
     </p>
-  )
+  );
 }
 
-function Button({bgColor , textColor , onClick , children}) {
+function Button({ bgColor, textColor, onClick, children }) {
   return (
-    <button style={{backgroundColor: bgColor , color: textColor}} onClick={onClick}>
+    <button
+      style={{ backgroundColor: bgColor, color: textColor }}
+      onClick={onClick}
+    >
       {children}
     </button>
-  )
+  );
 }
